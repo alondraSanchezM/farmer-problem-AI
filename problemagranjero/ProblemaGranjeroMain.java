@@ -10,8 +10,11 @@ public class ProblemaGranjeroMain {
 
     public static void main(String[] args) {
         
+        new ProblemaGranjeroUI().setVisible(true);
+            
+        
         //Inicialización provisional 
-        Estado eInicial = new Estado(1, 2, 1, 1);
+        Estado eInicial = new Estado(1, 1, 1, 1);
         Estado eFinal = new Estado(2, 2, 2, 2);
         
         Busquedas b = new Busquedas();
