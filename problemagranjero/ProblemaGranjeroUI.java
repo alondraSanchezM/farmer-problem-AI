@@ -4,39 +4,64 @@ package problemagranjero;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 public class ProblemaGranjeroUI extends javax.swing.JFrame {
 
-    FondoPanel  fondo  = new FondoPanel();
-    
-    int colPosIni;
+    FondoPanel fondo = new FondoPanel();
     
     public ProblemaGranjeroUI() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setTitle("Problema del granjero");
+    }
 
-        
-//        definirposicion();
+    public JButton getBtn_Reiniciar() {
+        return btn_Reiniciar;
+    }
+
+    public JButton getBtn_busAnchura() {
+        return btn_busAnchura;
+    }
+
+    public JButton getBtn_busProfundidad() {
+        return btn_busProfundidad;
+    }
+
+    public JComboBox<String> getCb_cabraFin() {
+        return cb_cabraFin;
+    }
+
+    public JComboBox<String> getCb_cabraIni() {
+        return cb_cabraIni;
+    }
+
+    public JComboBox<String> getCb_colFin() {
+        return cb_colFin;
+    }
+
+    public JComboBox<String> getCb_colIni() {
+        return cb_colIni;
+    }
+
+    public JComboBox<String> getCb_granjeroFin() {
+        return cb_granjeroFin;
+    }
+
+    public JComboBox<String> getCb_granjeroIni() {
+        return cb_granjeroIni;
+    }
+
+    public JComboBox<String> getCb_loboFin() {
+        return cb_loboFin;
+    }
+
+    public JComboBox<String> getCb_loboIni() {
+        return cb_loboIni;
     }
     
-    void definirposicion(){
-        boolean flag = true;
-        if(flag == true){
-            img_granjeroIzq.setVisible(true);
-            img_loboIzq.setVisible(true);
-            img_cabraIzq.setVisible(true);
-            img_colIzq.setVisible(false);
-            img_granjeroDer.setVisible(false);
-            img_loboDer.setVisible(false);
-            img_cabraDer.setVisible(false);
-            img_colIDer.setVisible(true);
-        }
-    }
-
-
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -57,7 +82,7 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         pn_configFin = new javax.swing.JPanel();
         lb_configFinal = new javax.swing.JLabel();
         lb_loboFin = new javax.swing.JLabel();
-        cb_loboGranjeroFin = new javax.swing.JComboBox<>();
+        cb_loboFin = new javax.swing.JComboBox<>();
         lb_granjeroFin = new javax.swing.JLabel();
         cb_granjeroFin = new javax.swing.JComboBox<>();
         cb_cabraFin = new javax.swing.JComboBox<>();
@@ -188,29 +213,14 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         lb_loboFin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lb_loboFin.setText("Lobo");
 
-        cb_loboGranjeroFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Izquierda", "Derecha" }));
-        cb_loboGranjeroFin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_loboGranjeroFinActionPerformed(evt);
-            }
-        });
+        cb_loboFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Izquierda", "Derecha" }));
 
         lb_granjeroFin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lb_granjeroFin.setText("Granjero");
 
         cb_granjeroFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Izquierda", "Derecha" }));
-        cb_granjeroFin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_granjeroFinActionPerformed(evt);
-            }
-        });
 
         cb_cabraFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Izquierda", "Derecha" }));
-        cb_cabraFin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_cabraFinActionPerformed(evt);
-            }
-        });
 
         lb_cabraFin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lb_cabraFin.setText("Cabra");
@@ -219,11 +229,6 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         lb_colFin.setText("Col");
 
         cb_colFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Izquierda", "Derecha" }));
-        cb_colFin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_colFinActionPerformed(evt);
-            }
-        });
 
         pn_configIni.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -310,7 +315,7 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lb_loboFin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cb_loboGranjeroFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cb_loboFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lb_cabraFin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -329,7 +334,7 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
                         .addComponent(lb_configFinal)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cb_loboGranjeroFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_loboFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lb_granjeroFin)
                             .addComponent(cb_granjeroFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lb_loboFin)
@@ -388,36 +393,20 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cb_loboGranjeroFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_loboGranjeroFinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cb_loboGranjeroFinActionPerformed
-
-    private void cb_granjeroFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_granjeroFinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cb_granjeroFinActionPerformed
-
-    private void cb_cabraFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_cabraFinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cb_cabraFinActionPerformed
-
-    private void cb_colFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_colFinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cb_colFinActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btn_Reiniciar;
-    public javax.swing.JButton btn_busAnchura;
-    public javax.swing.JButton btn_busProfundidad;
-    public javax.swing.JComboBox<String> cb_cabraFin;
-    public javax.swing.JComboBox<String> cb_cabraIni;
-    public javax.swing.JComboBox<String> cb_colFin;
-    public javax.swing.JComboBox<String> cb_colIni;
-    public javax.swing.JComboBox<String> cb_granjeroFin;
-    public javax.swing.JComboBox<String> cb_granjeroIni;
-    public javax.swing.JComboBox<String> cb_loboGranjeroFin;
-    public javax.swing.JComboBox<String> cb_loboIni;
+    private javax.swing.JButton btn_Reiniciar;
+    private javax.swing.JButton btn_busAnchura;
+    private javax.swing.JButton btn_busProfundidad;
+    private javax.swing.JComboBox<String> cb_cabraFin;
+    private javax.swing.JComboBox<String> cb_cabraIni;
+    private javax.swing.JComboBox<String> cb_colFin;
+    private javax.swing.JComboBox<String> cb_colIni;
+    private javax.swing.JComboBox<String> cb_granjeroFin;
+    private javax.swing.JComboBox<String> cb_granjeroIni;
+    private javax.swing.JComboBox<String> cb_loboFin;
+    private javax.swing.JComboBox<String> cb_loboIni;
     private javax.swing.JLabel img_cabraDer;
     private javax.swing.JLabel img_cabraIzq;
     private javax.swing.JLabel img_colIDer;
