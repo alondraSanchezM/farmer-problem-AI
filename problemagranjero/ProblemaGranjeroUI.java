@@ -6,6 +6,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 public class ProblemaGranjeroUI extends javax.swing.JFrame {
 
@@ -15,6 +16,7 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        
     }
 
     public JButton getBtn_Reiniciar() {
@@ -60,6 +62,38 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
     public JComboBox<String> getCb_loboIni() {
         return cb_loboIni;
     }
+
+    public JLabel getImg_cabraDer() {
+        return img_cabraDer;
+    }
+
+    public JLabel getImg_cabraIzq() {
+        return img_cabraIzq;
+    }
+
+    public JLabel getImg_colDer() {
+        return img_colDer;
+    }
+
+    public JLabel getImg_colIzq() {
+        return img_colIzq;
+    }
+
+    public JLabel getImg_granjeroDer() {
+        return img_granjeroDer;
+    }
+
+    public JLabel getImg_granjeroIzq() {
+        return img_granjeroIzq;
+    }
+
+    public JLabel getImg_loboDer() {
+        return img_loboDer;
+    }
+
+    public JLabel getImg_loboIzq() {
+        return img_loboIzq;
+    }
     
     
     @SuppressWarnings("unchecked")
@@ -71,14 +105,11 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         img_colIzq = new javax.swing.JLabel();
         img_loboIzq = new javax.swing.JLabel();
         img_cabraIzq = new javax.swing.JLabel();
-        img_colIDer = new javax.swing.JLabel();
+        img_colDer = new javax.swing.JLabel();
         img_granjeroDer = new javax.swing.JLabel();
         img_cabraDer = new javax.swing.JLabel();
         img_loboDer = new javax.swing.JLabel();
         pn_variables = new javax.swing.JPanel();
-        btn_busProfundidad = new javax.swing.JButton();
-        btn_busAnchura = new javax.swing.JButton();
-        btn_Reiniciar = new javax.swing.JButton();
         pn_configFin = new javax.swing.JPanel();
         lb_configFinal = new javax.swing.JLabel();
         lb_loboFin = new javax.swing.JLabel();
@@ -99,113 +130,49 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         lb_cabrraIni = new javax.swing.JLabel();
         ln_colIni = new javax.swing.JLabel();
         cb_colIni = new javax.swing.JComboBox<>();
+        btn_busProfundidad = new javax.swing.JButton();
+        btn_busAnchura = new javax.swing.JButton();
+        btn_Reiniciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pn_background.setBackground(new java.awt.Color(255, 153, 153));
         pn_background.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        pn_background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         img_granjeroIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/farmer.png"))); // NOI18N
+        pn_background.add(img_granjeroIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
 
         img_colIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cabbage.png"))); // NOI18N
+        pn_background.add(img_colIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, -1, -1));
 
         img_loboIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wolf.png"))); // NOI18N
+        pn_background.add(img_loboIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, -1, -1));
 
         img_cabraIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/goat.png"))); // NOI18N
+        pn_background.add(img_cabraIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, -1, -1));
 
-        img_colIDer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cabbage.png"))); // NOI18N
+        img_colDer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cabbage.png"))); // NOI18N
+        pn_background.add(img_colDer, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 460, -1, -1));
 
         img_granjeroDer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/farmer.png"))); // NOI18N
+        pn_background.add(img_granjeroDer, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 370, -1, -1));
 
         img_cabraDer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/goat.png"))); // NOI18N
+        pn_background.add(img_cabraDer, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, -1, -1));
 
         img_loboDer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wolf.png"))); // NOI18N
+        pn_background.add(img_loboDer, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 420, -1, -1));
 
-        javax.swing.GroupLayout pn_backgroundLayout = new javax.swing.GroupLayout(pn_background);
-        pn_background.setLayout(pn_backgroundLayout);
-        pn_backgroundLayout.setHorizontalGroup(
-            pn_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_backgroundLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(img_loboIzq)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pn_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(img_cabraIzq)
-                    .addGroup(pn_backgroundLayout.createSequentialGroup()
-                        .addComponent(img_granjeroIzq)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(img_colIzq)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(img_colIDer)
-                .addGroup(pn_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pn_backgroundLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(img_cabraDer))
-                    .addGroup(pn_backgroundLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(img_granjeroDer)))
-                .addGap(18, 18, 18)
-                .addComponent(img_loboDer)
-                .addGap(83, 83, 83))
-        );
-        pn_backgroundLayout.setVerticalGroup(
-            pn_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_backgroundLayout.createSequentialGroup()
-                .addContainerGap(364, Short.MAX_VALUE)
-                .addGroup(pn_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_backgroundLayout.createSequentialGroup()
-                        .addComponent(img_loboIzq)
-                        .addGap(129, 129, 129))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_backgroundLayout.createSequentialGroup()
-                        .addGroup(pn_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pn_backgroundLayout.createSequentialGroup()
-                                .addComponent(img_granjeroIzq)
-                                .addGap(15, 15, 15))
-                            .addGroup(pn_backgroundLayout.createSequentialGroup()
-                                .addComponent(img_colIzq)
-                                .addGap(33, 33, 33)))
-                        .addComponent(img_cabraIzq)
-                        .addGap(62, 62, 62))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_backgroundLayout.createSequentialGroup()
-                        .addComponent(img_colIDer)
-                        .addGap(127, 127, 127))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_backgroundLayout.createSequentialGroup()
-                        .addComponent(img_loboDer)
-                        .addGap(153, 153, 153))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_backgroundLayout.createSequentialGroup()
-                        .addComponent(img_granjeroDer)
-                        .addGap(18, 18, 18)
-                        .addComponent(img_cabraDer)
-                        .addGap(81, 81, 81))))
-        );
+        getContentPane().add(pn_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 640));
 
         pn_variables.setBackground(new java.awt.Color(255, 255, 255));
-
-        btn_busProfundidad.setBackground(new java.awt.Color(58, 96, 110));
-        btn_busProfundidad.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
-        btn_busProfundidad.setForeground(new java.awt.Color(255, 255, 255));
-        btn_busProfundidad.setText("Búsqueda en Profundidad");
-        btn_busProfundidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_busProfundidad.setFocusPainted(false);
-        btn_busProfundidad.setName("Generar Ruta"); // NOI18N
-
-        btn_busAnchura.setBackground(new java.awt.Color(58, 96, 110));
-        btn_busAnchura.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
-        btn_busAnchura.setForeground(new java.awt.Color(255, 255, 255));
-        btn_busAnchura.setText("Búsqueda en Anchura");
-        btn_busAnchura.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_busAnchura.setFocusPainted(false);
-        btn_busAnchura.setName("Generar Ruta"); // NOI18N
-
-        btn_Reiniciar.setBackground(new java.awt.Color(58, 96, 110));
-        btn_Reiniciar.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
-        btn_Reiniciar.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Reiniciar.setText("Reiniciar");
-        btn_Reiniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_Reiniciar.setFocusPainted(false);
-        btn_Reiniciar.setName("Generar Ruta"); // NOI18N
+        pn_variables.setEnabled(false);
 
         pn_configFin.setBackground(new java.awt.Color(255, 255, 255));
+        pn_configFin.setEnabled(false);
 
         lb_configFinal.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         lb_configFinal.setText("Configuración inicial");
@@ -231,6 +198,7 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         cb_colFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Izquierda", "Derecha" }));
 
         pn_configIni.setBackground(new java.awt.Color(255, 255, 255));
+        pn_configIni.setEnabled(false);
 
         lb_configInicial.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         lb_configInicial.setText("Configuración inicial");
@@ -298,32 +266,65 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
+        btn_busProfundidad.setBackground(new java.awt.Color(58, 96, 110));
+        btn_busProfundidad.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+        btn_busProfundidad.setForeground(new java.awt.Color(255, 255, 255));
+        btn_busProfundidad.setText("Búsqueda en Profundidad");
+        btn_busProfundidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_busProfundidad.setFocusPainted(false);
+        btn_busProfundidad.setName("Generar Ruta"); // NOI18N
+
+        btn_busAnchura.setBackground(new java.awt.Color(58, 96, 110));
+        btn_busAnchura.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+        btn_busAnchura.setForeground(new java.awt.Color(255, 255, 255));
+        btn_busAnchura.setText("Búsqueda en Anchura");
+        btn_busAnchura.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_busAnchura.setFocusPainted(false);
+        btn_busAnchura.setName("Generar Ruta"); // NOI18N
+
+        btn_Reiniciar.setBackground(new java.awt.Color(58, 96, 110));
+        btn_Reiniciar.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+        btn_Reiniciar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Reiniciar.setText("Reiniciar");
+        btn_Reiniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_Reiniciar.setFocusPainted(false);
+        btn_Reiniciar.setName("Generar Ruta"); // NOI18N
+
         javax.swing.GroupLayout pn_configFinLayout = new javax.swing.GroupLayout(pn_configFin);
         pn_configFin.setLayout(pn_configFinLayout);
         pn_configFinLayout.setHorizontalGroup(
             pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn_configFinLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pn_configIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lb_configFinal)
                     .addGroup(pn_configFinLayout.createSequentialGroup()
-                        .addComponent(lb_granjeroFin)
+                        .addContainerGap()
+                        .addComponent(pn_configIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cb_granjeroFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_loboFin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cb_loboFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_cabraFin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cb_cabraFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_colFin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cb_colFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lb_configFinal)
+                            .addGroup(pn_configFinLayout.createSequentialGroup()
+                                .addComponent(lb_granjeroFin)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb_granjeroFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lb_loboFin)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb_loboFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lb_cabraFin)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb_cabraFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lb_colFin)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb_colFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pn_configFinLayout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(btn_busProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(btn_busAnchura, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(213, 213, 213)
+                        .addComponent(btn_Reiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pn_configFinLayout.setVerticalGroup(
@@ -342,8 +343,12 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
                             .addComponent(lb_cabraFin)
                             .addComponent(cb_colFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lb_colFin))
-                        .addGap(0, 32, Short.MAX_VALUE))
-                    .addComponent(pn_configIni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(pn_configIni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_busProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_busAnchura, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Reiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -351,45 +356,17 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         pn_variables.setLayout(pn_variablesLayout);
         pn_variablesLayout.setHorizontalGroup(
             pn_variablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_variablesLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(btn_busProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_busAnchura, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_Reiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81))
-            .addGroup(pn_variablesLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(pn_configFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(pn_configFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         pn_variablesLayout.setVerticalGroup(
             pn_variablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn_variablesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pn_configFin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pn_variablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_busProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_busAnchura, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Reiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(13, 13, 13)
+                .addComponent(pn_configFin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pn_variables, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pn_background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pn_background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(pn_variables, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(pn_variables, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 638, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -409,7 +386,7 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_loboIni;
     private javax.swing.JLabel img_cabraDer;
     private javax.swing.JLabel img_cabraIzq;
-    private javax.swing.JLabel img_colIDer;
+    private javax.swing.JLabel img_colDer;
     private javax.swing.JLabel img_colIzq;
     private javax.swing.JLabel img_granjeroDer;
     private javax.swing.JLabel img_granjeroIzq;
@@ -437,7 +414,7 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         public void paint(Graphics g){
             imagen =  new ImageIcon(getClass().getResource("/imagenes/background.png")).getImage();
             
-            g.drawImage(imagen,0, 0, getWidth(), getHeight(), this );
+            g.drawImage(imagen,0, 0, 1326, getHeight(), this );
             
             setOpaque(false);
             

@@ -12,6 +12,7 @@ public class ProblemaGranjeroMain implements ActionListener {
 
     private ProblemaGranjeroUI ui;
     private Busquedas b;
+    private animacionCaminoSolucion animacion;
 
     public ProblemaGranjeroMain(ProblemaGranjeroUI ui, Busquedas b) {
         this.ui = ui;
@@ -27,6 +28,7 @@ public class ProblemaGranjeroMain implements ActionListener {
         ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ui.setLocationRelativeTo(null);
         ui.setVisible(true);
+        limpiar();
     }
 
     @Override
@@ -56,6 +58,10 @@ public class ProblemaGranjeroMain implements ActionListener {
 
                 ArrayList<Estado> caminoAnchura = b.caminoSolucion(resultadoAnchura);
 
+                //Animación a partir de un hilo
+                animacion = new animacionCaminoSolucion(ui, caminoAnchura);
+                animacion.start();
+
                 for (Estado estado : caminoAnchura) {
                     System.out.println(estado.toString());
                 }
@@ -72,6 +78,7 @@ public class ProblemaGranjeroMain implements ActionListener {
                     conversor(ui.getCb_cabraFin().getSelectedItem().toString()),
                     conversor(ui.getCb_colFin().getSelectedItem().toString()));
 
+            //Validación de datos de entrada
             if (eInicial.comparar(eFinal)) {
                 JOptionPane.showMessageDialog(null, "El estado inicial es el mismo que el estado final", "Error", JOptionPane.ERROR_MESSAGE);
             } else if (!eInicial.esEstadoValido() || !eFinal.esEstadoValido()) {
@@ -85,13 +92,17 @@ public class ProblemaGranjeroMain implements ActionListener {
 
                 ArrayList<Estado> caminoProfundidad = b.caminoSolucion(resultadoProfundidad);
 
+                //Animación a partir de un hilo
+                animacion = new animacionCaminoSolucion(ui, caminoProfundidad);
+                animacion.start();
+
                 for (Estado estado : caminoProfundidad) {
                     System.out.println(estado.toString());
                 }
             }
 
         } else if (ui.getBtn_Reiniciar() == evento.getSource()) {
-
+            limpiar();
         }
 
     }
@@ -103,7 +114,68 @@ public class ProblemaGranjeroMain implements ActionListener {
         } else {
             return 2;
         }
+    }
 
+    private void limpiar() {
+        ui.getImg_granjeroIzq().setVisible(false);
+        ui.getImg_loboIzq().setVisible(false);
+        ui.getImg_cabraIzq().setVisible(false);
+        ui.getImg_colIzq().setVisible(false);
+        ui.getImg_granjeroDer().setVisible(false);
+        ui.getImg_loboDer().setVisible(false);
+        ui.getImg_cabraDer().setVisible(false);
+        ui.getImg_colDer().setVisible(false);
+    }
+}
+
+class animacionCaminoSolucion extends Thread {
+
+    private ArrayList<Estado> camino;
+    private ProblemaGranjeroUI ui;
+
+    public animacionCaminoSolucion(ProblemaGranjeroUI ui, ArrayList<Estado> lista) {
+        this.ui = ui;
+        this.camino = lista;
+    }
+
+    public void run() {
+        camino.forEach((estado) -> {
+            try {
+                //Movimientos
+                if (estado.getGranjero() == 1) {
+                    ui.getImg_granjeroIzq().setVisible(true);
+                    ui.getImg_granjeroDer().setVisible(false);
+                } else {
+                    ui.getImg_granjeroIzq().setVisible(false);
+                    ui.getImg_granjeroDer().setVisible(true);
+                }
+                if (estado.getLobo() == 1) {
+                    ui.getImg_loboIzq().setVisible(true);
+                    ui.getImg_loboDer().setVisible(false);
+                } else {
+                    ui.getImg_loboIzq().setVisible(false);
+                    ui.getImg_loboDer().setVisible(true);
+                }
+                if (estado.getCabra() == 1) {
+                    ui.getImg_cabraIzq().setVisible(true);
+                    ui.getImg_cabraDer().setVisible(false);
+                } else {
+                    ui.getImg_cabraIzq().setVisible(false);
+                    ui.getImg_cabraDer().setVisible(true);
+                }
+                if (estado.getCol() == 1) {
+                    ui.getImg_colIzq().setVisible(true);
+                    ui.getImg_colDer().setVisible(false);
+                } else {
+                    ui.getImg_colIzq().setVisible(false);
+                    ui.getImg_colDer().setVisible(true);
+                }
+
+                //Establece el intervalo de la animación en 1 min
+                sleep(1000);
+            } catch (InterruptedException ex) {
+            }
+        });
     }
 
 }
