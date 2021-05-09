@@ -1,6 +1,8 @@
 
 package problemagranjero;
 
+//Alondra Sánchez Molina
+
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -8,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 public class ProblemaGranjeroUI extends javax.swing.JFrame {
 
     FondoPanel fondo = new FondoPanel();
@@ -16,7 +19,6 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        
     }
 
     public JButton getBtn_Reiniciar() {
@@ -94,7 +96,14 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
     public JLabel getImg_loboIzq() {
         return img_loboIzq;
     }
-    
+
+    public JLabel getImg_BoteDer() {
+        return img_BoteDer;
+    }
+
+    public JLabel getImg_BoteIzq() {
+        return img_BoteIzq;
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -109,6 +118,8 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         img_granjeroDer = new javax.swing.JLabel();
         img_cabraDer = new javax.swing.JLabel();
         img_loboDer = new javax.swing.JLabel();
+        img_BoteDer = new javax.swing.JLabel();
+        img_BoteIzq = new javax.swing.JLabel();
         pn_variables = new javax.swing.JPanel();
         pn_configFin = new javax.swing.JPanel();
         lb_configFinal = new javax.swing.JLabel();
@@ -166,6 +177,12 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         img_loboDer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wolf.png"))); // NOI18N
         pn_background.add(img_loboDer, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 420, -1, -1));
 
+        img_BoteDer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bote.png"))); // NOI18N
+        pn_background.add(img_BoteDer, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 510, -1, -1));
+
+        img_BoteIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bote.png"))); // NOI18N
+        pn_background.add(img_BoteIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, -1, -1));
+
         getContentPane().add(pn_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 640));
 
         pn_variables.setBackground(new java.awt.Color(255, 255, 255));
@@ -175,7 +192,7 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         pn_configFin.setEnabled(false);
 
         lb_configFinal.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        lb_configFinal.setText("Configuración inicial");
+        lb_configFinal.setText("Configuración final");
 
         lb_loboFin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lb_loboFin.setText("Lobo");
@@ -342,9 +359,9 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
                             .addComponent(cb_cabraFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lb_cabraFin)
                             .addComponent(cb_colFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lb_colFin))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(lb_colFin)))
                     .addComponent(pn_configIni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_busProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_busAnchura, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -384,6 +401,8 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_granjeroIni;
     private javax.swing.JComboBox<String> cb_loboFin;
     private javax.swing.JComboBox<String> cb_loboIni;
+    private javax.swing.JLabel img_BoteDer;
+    private javax.swing.JLabel img_BoteIzq;
     private javax.swing.JLabel img_cabraDer;
     private javax.swing.JLabel img_cabraIzq;
     private javax.swing.JLabel img_colDer;

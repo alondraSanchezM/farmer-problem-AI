@@ -63,13 +63,13 @@ public class Busquedas {
         LinkedList<Estado> abiertos = new LinkedList<>();
         LinkedList<Estado> visitados = new LinkedList<>();
 
-        abiertos.add(estadoInicial);
+        abiertos.push(estadoInicial);
         int nivel = 0;
 
         while (!abiertos.isEmpty()) {
 
             Estado estadoActual = abiertos.poll();
-            visitados.push(estadoActual);
+            visitados.add(estadoActual);
             recorridoAnchura.add(estadoActual);
 
             List<Estado> sucesores = estadoActual.getEstadosSucesores();
@@ -85,7 +85,7 @@ public class Busquedas {
                         System.out.println("Solución encontrada " + hijo);
                         return recorridoAnchura;
                     }
-                    abiertos.add(hijo);
+                    abiertos.push(hijo);
                     System.out.println("Añadiendo estado " + hijo);
 
                 }
