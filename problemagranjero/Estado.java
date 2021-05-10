@@ -122,8 +122,7 @@ public class Estado {
 
     @Override
     public String toString() {
-        return "Estado{" + "granjero=" + granjero + ", lobo=" + lobo + ", cabra=" + cabra + ", col=" + col + '}';
+        return "Estado{ " + "granjero= " + granjero + ", lobo= " + lobo + ", cabra= " + cabra + ", col= " + col + '}';
     }
-    
-    
+  
 }

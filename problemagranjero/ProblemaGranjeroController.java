@@ -4,7 +4,6 @@ package problemagranjero;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -44,26 +43,20 @@ public class ProblemaGranjeroController implements ActionListener {
                     conversor(ui.getCb_loboFin().getSelectedItem().toString()),
                     conversor(ui.getCb_cabraFin().getSelectedItem().toString()),
                     conversor(ui.getCb_colFin().getSelectedItem().toString()));
-            
+
             //Validación datos de entrada
             if (eInicial.comparar(eFinal)) {
                 JOptionPane.showMessageDialog(null, "El estado inicial es el mismo que el estado final", "Error", JOptionPane.ERROR_MESSAGE);
             } else if (!eInicial.esEstadoValido() || !eFinal.esEstadoValido()) {
                 JOptionPane.showMessageDialog(null, "Estados no permitidos", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
-                LinkedList resultadoAnchura = b.BFS(eInicial, eFinal);
-
-                System.out.println("Recorrido busqueda por anchura: ");
-                for (int i = 0; i < resultadoAnchura.size(); i++) {
-                    System.out.println(i + 1 + "  " + resultadoAnchura.get(i));
-                }
-
-                ArrayList<Estado> caminoAnchura = b.caminoSolucion(resultadoAnchura);
+                ArrayList<Estado> caminoAnchura = b.caminoSolucion(b.BFS(eInicial, eFinal));
 
                 //Animación a partir de un hilo
                 animacion = new animacionCaminoSolucion(ui, caminoAnchura);
                 animacion.start();
 
+                System.out.println("Solución en anchura");
                 for (Estado estado : caminoAnchura) {
                     System.out.println(estado.toString());
                 }
@@ -86,18 +79,13 @@ public class ProblemaGranjeroController implements ActionListener {
             } else if (!eInicial.esEstadoValido() || !eFinal.esEstadoValido()) {
                 JOptionPane.showMessageDialog(null, "Estados no permitidos", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
-                LinkedList resultadoProfundidad = b.DFS(eInicial, eFinal);
-                System.out.println("Recorrido busqueda por profundidad: ");
-                for (int i = 0; i < resultadoProfundidad.size(); i++) {
-                    System.out.println(i + 1 + "  " + resultadoProfundidad.get(i));
-                }
-
-                ArrayList<Estado> caminoProfundidad = b.caminoSolucion(resultadoProfundidad);
+                ArrayList<Estado> caminoProfundidad = b.caminoSolucion(b.DFS(eInicial, eFinal));
 
                 //Animación a partir de un hilo
                 animacion = new animacionCaminoSolucion(ui, caminoProfundidad);
                 animacion.start();
-
+                
+                System.out.println("Solución en profundidad");
                 for (Estado estado : caminoProfundidad) {
                     System.out.println(estado.toString());
                 }
@@ -105,6 +93,7 @@ public class ProblemaGranjeroController implements ActionListener {
 
         } else if (ui.getBtn_Reiniciar() == evento.getSource()) {
             limpiar();
+            animacion.stop();  //Ya no es una buena practica
         }
 
     }
@@ -129,6 +118,8 @@ public class ProblemaGranjeroController implements ActionListener {
         ui.getImg_colDer().setVisible(false);
         ui.getImg_BoteIzq().setVisible(false);
         ui.getImg_BoteDer().setVisible(false);
+        ui.getLb_caminoSolucion().setVisible(false);
+        ui.getLb_estadoActual().setText("");
     }
 }
 
@@ -142,8 +133,11 @@ class animacionCaminoSolucion extends Thread {
         this.camino = lista;
     }
 
+    @Override
     public void run() {
         camino.forEach((estado) -> {
+            ui.getLb_caminoSolucion().setVisible(true);
+            ui.getLb_estadoActual().setText(estado.toString());
             try {
                 //Movimientos
                 if (estado.getGranjero() == 1) {
@@ -179,8 +173,8 @@ class animacionCaminoSolucion extends Thread {
                     ui.getImg_colDer().setVisible(true);
                 }
 
-                //Establece el intervalo de la animación en 1 min
-                sleep(1000);
+                //Establece el intervalo de la animación
+                sleep(1300);
             } catch (InterruptedException ex) {
             }
         });

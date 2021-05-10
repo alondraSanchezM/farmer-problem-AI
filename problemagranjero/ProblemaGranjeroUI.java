@@ -104,6 +104,14 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
     public JLabel getImg_BoteIzq() {
         return img_BoteIzq;
     }
+
+    public JLabel getLb_estadoActual() {
+        return lb_estadoActual;
+    }
+
+    public JLabel getLb_caminoSolucion() {
+        return lb_caminoSolucion;
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -144,6 +152,8 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         btn_busProfundidad = new javax.swing.JButton();
         btn_busAnchura = new javax.swing.JButton();
         btn_Reiniciar = new javax.swing.JButton();
+        lb_caminoSolucion = new javax.swing.JLabel();
+        lb_estadoActual = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -154,16 +164,16 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         pn_background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         img_granjeroIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/farmer.png"))); // NOI18N
-        pn_background.add(img_granjeroIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
+        pn_background.add(img_granjeroIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, -1, -1));
 
         img_colIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cabbage.png"))); // NOI18N
         pn_background.add(img_colIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, -1, -1));
 
         img_loboIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wolf.png"))); // NOI18N
-        pn_background.add(img_loboIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, -1, -1));
+        pn_background.add(img_loboIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, -1, -1));
 
         img_cabraIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/goat.png"))); // NOI18N
-        pn_background.add(img_cabraIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, -1, -1));
+        pn_background.add(img_cabraIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, -1, -1));
 
         img_colDer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cabbage.png"))); // NOI18N
         pn_background.add(img_colDer, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 460, -1, -1));
@@ -307,14 +317,20 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
         btn_Reiniciar.setFocusPainted(false);
         btn_Reiniciar.setName("Generar Ruta"); // NOI18N
 
+        lb_caminoSolucion.setFont(new java.awt.Font("Segoe UI", 2, 16)); // NOI18N
+        lb_caminoSolucion.setText("Camino solución: ");
+        lb_caminoSolucion.setToolTipText("");
+
+        lb_estadoActual.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout pn_configFinLayout = new javax.swing.GroupLayout(pn_configFin);
         pn_configFin.setLayout(pn_configFinLayout);
         pn_configFinLayout.setHorizontalGroup(
             pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn_configFinLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pn_configFinLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(pn_configIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,20 +350,32 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lb_colFin)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cb_colFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(cb_colFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pn_configFinLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(lb_caminoSolucion)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lb_estadoActual))))
                     .addGroup(pn_configFinLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(btn_busProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(btn_busAnchura, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(213, 213, 213)
-                        .addComponent(btn_Reiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_busProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_busAnchura, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_Reiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pn_configFinLayout.setVerticalGroup(
             pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn_configFinLayout.createSequentialGroup()
                 .addGroup(pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pn_configFinLayout.createSequentialGroup()
+                        .addComponent(pn_configIni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_busProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_busAnchura, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_Reiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lb_estadoActual)))
                     .addGroup(pn_configFinLayout.createSequentialGroup()
                         .addComponent(lb_configFinal)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -359,13 +387,10 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
                             .addComponent(cb_cabraFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lb_cabraFin)
                             .addComponent(cb_colFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lb_colFin)))
-                    .addComponent(pn_configIni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(pn_configFinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_busProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_busAnchura, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Reiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lb_colFin))
+                        .addGap(34, 34, 34)
+                        .addComponent(lb_caminoSolucion)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -413,9 +438,11 @@ public class ProblemaGranjeroUI extends javax.swing.JFrame {
     private javax.swing.JLabel img_loboIzq;
     private javax.swing.JLabel lb_cabraFin;
     private javax.swing.JLabel lb_cabrraIni;
+    private javax.swing.JLabel lb_caminoSolucion;
     private javax.swing.JLabel lb_colFin;
     private javax.swing.JLabel lb_configFinal;
     private javax.swing.JLabel lb_configInicial;
+    private javax.swing.JLabel lb_estadoActual;
     private javax.swing.JLabel lb_granjeroFin;
     private javax.swing.JLabel lb_granjeroIni;
     private javax.swing.JLabel lb_loboFin;
