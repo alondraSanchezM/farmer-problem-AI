@@ -22,40 +22,27 @@ public class Busquedas {
 
         abiertos.push(estadoInicial);
 
-        int nivel = 1;
         while (!abiertos.isEmpty()) {
 
             Estado estadoActual = abiertos.pop();
             recorridoProfundidad.add(estadoActual);
             visitados.push(estadoActual);
-            System.out.println("Marcando estado " + estadoActual + "como visitado    (ESTADO ACUAL)");
             
             if (estadoActual.esEstadoSolucion(estadoFinal)) {
                 recorridoProfundidad.add(estadoActual);
-                System.out.println("Solución encontrada " + estadoActual);
                 return recorridoProfundidad;
             }
 
             //Obtener lista de sucesores validos
             List<Estado> sucesores = estadoActual.getEstadosSucesores();
-            System.out.println("Estados sucesores sin comprobar: "+ sucesores);
             for (Estado hijo : sucesores) {
-                System.out.println("Recorriendo nivel " + nivel + " " + estadoActual);
                 hijo.setEstadoPadre(estadoActual);
                  
                 //Obtener los sucesores validos que no hallan sido visitados o se encuentren abiertos
                 if (!esRepetido(visitados, abiertos, hijo)) {       
                     abiertos.push(hijo);
-                    System.out.println("Añadiendo a abiertos estado " + hijo);
                 }
             }
-            
-            System.out.println("Estados abiertos: " + abiertos);
-            System.out.println("Estados visitados: " + visitados);
-            System.out.println("TERMINA una vuelta abiertos");
-            nivel = nivel + 1; 
-            
-            System.out.println("--------------------------------------------------------------------FIN NIVEL ");
         }
         return null;
     }
@@ -72,41 +59,29 @@ public class Busquedas {
         LinkedList<Estado> abiertos = new LinkedList<>();
         LinkedList<Estado> visitados = new LinkedList<>();
 
-        abiertos.push(estadoInicial);  //changes for offer
+        abiertos.offer(estadoInicial); 
         
-        int nivel = 1;
         while (!abiertos.isEmpty()) {
 
             Estado estadoActual = abiertos.poll();
             visitados.add(estadoActual);
             recorridoAnchura.add(estadoActual);
-            System.out.println("Marcando estado " + estadoActual + "como visitado    (ESTADO ACUAL)");
 
             //Obtener lista de sucesores validos
             List<Estado> sucesores = estadoActual.getEstadosSucesores();
-            System.out.println("Estados sucesores sin comprobar: "+ sucesores);
 
             for (Estado hijo : sucesores) {
-                System.out.println("Recorriendo nivel " + nivel + " " + estadoActual);
                 hijo.setEstadoPadre(estadoActual);
                 
                 //Obtener los sucesores validos que no hallan sido visitados o se encuentren abiertos
                 if (!esRepetido(visitados, abiertos, hijo)) {  
                     if (hijo.esEstadoSolucion(estadoFinal)) {
                         recorridoAnchura.add(hijo);
-                        System.out.println("Solución encontrada " + estadoActual);
                         return recorridoAnchura;
                     }
-                    abiertos.push(hijo);
-                    System.out.println("Añadiendo a abiertos estado " + hijo);
+                    abiertos.offer(hijo);
                 }
             }
-            System.out.println("Estados abiertos: " + abiertos);
-            System.out.println("Estados visitados: " + visitados);
-            System.out.println("TERMINA una vuelta abiertos");
-            nivel = nivel + 1; 
-            
-            System.out.println("--------------------------------------------------------------------FIN NIVEL ");
         }
         return null;
     }

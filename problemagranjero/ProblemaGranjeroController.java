@@ -55,11 +55,6 @@ public class ProblemaGranjeroController implements ActionListener {
                 //Animación a partir de un hilo
                 animacion = new animacionCaminoSolucion(ui, caminoAnchura);
                 animacion.start();
-
-                System.out.println("Solución en anchura");
-                for (Estado estado : caminoAnchura) {
-                    System.out.println(estado.toString());
-                }
             }
 
         } else if (ui.getBtn_busProfundidad() == evento.getSource()) {
@@ -85,10 +80,6 @@ public class ProblemaGranjeroController implements ActionListener {
                 animacion = new animacionCaminoSolucion(ui, caminoProfundidad);
                 animacion.start();
                 
-                System.out.println("Solución en profundidad");
-                for (Estado estado : caminoProfundidad) {
-                    System.out.println(estado.toString());
-                }
             }
 
         } else if (ui.getBtn_Reiniciar() == evento.getSource()) {
