@@ -2,6 +2,7 @@
 package problemagranjero;
 
 //Alondra Sánchez Molina
+//Icons made by Freepik from https://www.flaticon.com/
 
 import java.awt.Graphics;
 import java.awt.Image;
